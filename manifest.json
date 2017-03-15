@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "J Extension",
+  "description": "This extension will provide me with a customized home page tab",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": ["jquery-3.1.1.js"]
+    }
+],
+
+
+  "browser_action": {
+   "default_icon": "JRP-logo.png",
+   "default_popup": "popup.html",
+   "default_title": "launch"
+  },
+
+  "chrome_url_overrides": {
+     "newtab": "newtab.html"
+ },
+
+  "permissions": [
+   "activeTab",
+   "tabs",
+   "bookmarks",
+   "geolocation",
+   "http://*.google.com/"
+   ]
+}
