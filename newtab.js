@@ -39,10 +39,6 @@ $(document).ready(function() {
         // $('label').toggleClass("cssStyle");
     })
 
-
-
-
-
 });
 
 
@@ -83,6 +79,9 @@ $("body").mouseup(function() {
     // console.log("is off");
 });
 
+// $("label").mouseover(function(){
+//     $("label").css("border", "dotted .5px gray")
+// })
 
 
 $.ajax({
@@ -163,37 +162,34 @@ $.ajax({
     }
 })
 
-// var time1 = moment().utcOffset('dddd, MMMM Do YYYY, HH:MM:ss');
-// // console.log(time1);
-// $(".time").append(time1._d)
 
-// TIME - NEW YORK CITY
+
 
 //SLOW LOOP TO RUN AJAX REQUEST SEQUENTIALLY AT X INTREVALS
-function getWeather(url, city){
+function getWeather(url, city) {
     return {
         url: url,
         city: city
     }
 }
 
-var weatherObjects =
-[getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/New_York', '.NYC'),
-getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/Argentina/Buenos_Aires','.BA'),
-getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Europe/London', '.London'),
-getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Europe/Paris', '.Paris'),
-getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Australia/Brisbane', '.Brisbane'),
-getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Asia/Shanghai', '.Shanghai'),
+var weatherObjects = [getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/New_York', '.NYC'),
+    getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/Argentina/Buenos_Aires', '.BA'),
+    getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Europe/London', '.London'),
+    getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Europe/Paris', '.Paris'),
+    getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Australia/Brisbane', '.Brisbane'),
+    getWeather('http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Asia/Shanghai', '.Shanghai'),
 ];
 
 // console.log(weatherObjects);
 let weatherObjectsIndex = 0
-function loopSlow(){
+
+function loopSlow() {
     makeCall(weatherObjects[weatherObjectsIndex]);
-        weatherObjectsIndex = weatherObjectsIndex + 1
-        if (weatherObjectsIndex < 6) {
-            setTimeout(loopSlow, 1100)
-        }
+    weatherObjectsIndex = weatherObjectsIndex + 1
+    if (weatherObjectsIndex < 6) {
+        setTimeout(loopSlow, 1200)
+    }
 };
 loopSlow();
 
@@ -208,53 +204,7 @@ function makeCall(weatherObject) {
             alert('An error has occurred');
         },
         success: function(data) {
-             $(weatherObject.city).append(data.formatted + " " + data.abbreviation);
+            $(weatherObject.city).append(data.formatted + " " + data.abbreviation);
         }
     });
 }
-
-
-
-// $.ajax({
-//     url: 'http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/New_York',
-//     type: 'GET',
-//     data: {
-//         format: 'json'
-//     },
-//     error: function() {
-//         alert('An error has occurred');
-//     },
-//     success: function(data) {
-//          $(".NYC").append(data.formatted + " " + data.abbreviation);
-//     }
-// });
-//
-// // TIME - BUENOS AIRES
-// $.ajax({
-//     url: 'http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=America/Argentina/Buenos_Aires',
-//     type: 'GET',
-//     data: {
-//         format: 'json'
-//     },
-//     error: function() {
-//         alert('An error has occurred');
-//     },
-//     success: function(data) {
-//          $(".BA").append(data.formatted + " " + data.abbreviation);
-//     }
-// });
-//
-// // TIME - LONDON, UNITED KINGDOM
-// $.ajax({
-//     url: 'http://api.timezonedb.com/v2/get-time-zone?key=MG52BKMUNLKS&format=json&by=zone&zone=Europe/London',
-//     type: 'GET',
-//     data: {
-//         format: 'json'
-//     },
-//     error: function() {
-//         alert('An error has occurred');
-//     },
-//     success: function(data) {
-//          $(".London").append(data.formatted + " " + data.abbreviation);
-//     }
-// });

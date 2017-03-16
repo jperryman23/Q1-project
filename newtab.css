@@ -7,7 +7,7 @@ body {
     background-position-x: 90%;
     background-repeat: no-repeat;
     display: flex;
-    /*min-height: 100vh;*/
+    /*min-height: 75vw:*/
     flex-direction: column;
 }
 
@@ -17,6 +17,7 @@ main {
 
 .brand-logo {
     margin-left: 25px;
+    margin-top: 5px;
 }
 
 nav {
@@ -30,6 +31,9 @@ a.topTabs {
 
 a.topTabs:hover {
     color: #37c9d7
+}
+label:hover{
+    border: dotted .5px gray
 }
 
 .widgets {
@@ -46,7 +50,7 @@ a.topTabs:hover {
     flex-direction: column;
     justify-content: space-between;
     width: 410px;
-    min-width: 325px;
+    min-width: 375px;
     height: 420px;
     min-height: 410px;
     max-height: 550px;
@@ -66,7 +70,7 @@ div.news{
 .notes {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     width: 220px;
     min-width: 100px;
     height: 420px;
@@ -78,7 +82,6 @@ div.news{
     color: white;
     /*opacity: .50;*/
 }
-
 
 
 .toDoList {
@@ -109,6 +112,9 @@ div.list-items {
 }
 
 .weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 200px;
     min-width: 100px;
     height: 420px;
@@ -120,6 +126,13 @@ div.list-items {
     color: white;
     /*opacity: .50;*/
     margin-right: 2em;
+}
+
+
+div.weatherFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -143,6 +156,7 @@ div.list-items {
     background-color: rgb(17, 56, 191);
     text-align: center;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .ui-icon-resize {
@@ -173,36 +187,43 @@ div.list-items {
 
 .clocks {
     display: flex;
-    flex-wrap: wrap !important;
+    flex-wrap: wrap;
     justify-content: space-around;
+
 }
 
 .footerWrapper {
     position: fixed;
     bottom: 3%;
-    left: 18%;
+    left: 10%;
 }
 
 div.time {
     /*background: black;*/
+
     color: white;
     border: 1px solid rgb(184, 210, 247);
-    width: 150px;
+    width: 180px;
     height: 50px;
     opacity: .75;
     text-align: center;
+    align-content: center;
+
+
 }
 
 .time header {
-    color: white;
-    background: black;
+    color: black;
+    background: rgb(231, 231, 231);
     opacity: .75
+
 }
 
 li>label {
     font-size: 12px !important;
     color: white;
     padding-left: 20px;
+    /*border: dotted .5px gray;*/
 }
 
 
