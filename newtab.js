@@ -1,20 +1,54 @@
+
+    var isClicked = false;
+
+
 $(document).ready(function() {
+
     $(".toDoList").draggable();
     $(".weather").draggable();
     $(".noName").draggable();
 
+    $(".resizable").resizable();
 
-        // $("body").css("background-position" , "0%")
+    $("ul").sortable();
+
+
+
+        var time1 = moment().utcOffset('dddd, MMMM Do YYYY, HH:MM:ss');
+        console.log(time1);
+        $(".time").append(time1._d)
+
+
+
+        // var time2 = moment().utcOffset('dddd MMMM Do YYYY HH MM SS-5');
+        // console.log(time2._d);
+        // $(".time.2").append(time2._d)
 });
 
-// var time = moment().utcOffset('dddd MMMM Do YYYY HH MM SS+8')
-// console.log(time._d);
 
-$( function() {
-  $( ".resizable" ).resizable();
-} );
 
-var isClicked = false;
+$(".buttonAdd").on('click', function(){
+     var task = $(".addTask").val();
+     var newInput = $("#addTask").val().replace(/\s/g, "");
+
+    $(".ulList").append("<li> <input type='checkbox' id='" + newInput +"'><label for='" + newInput + "'>" + task + "</label></li>")
+
+    $("#addTask").val("")
+});
+
+
+
+$(function(){
+  $(".checkbox").change(function(){
+    if ($(this).is(':checked')) {
+        $("label").css("text-decoration", "line-through")
+    //    alert('You can rock now...');
+} else {
+    $("label").css("text-decoration", " ");
+};
+  });
+});
+
 
 
 $("body").mousemove(function(event){
@@ -29,6 +63,8 @@ if(!isClicked){
     $("body").css("background-position" , percent +'%')
 }
 });
+
+
 
 $("body").mousedown(function(){
     isClicked = true;
@@ -52,7 +88,7 @@ $.ajax({
             alert('An error has occurred');
         },
         success: function(data){
-              console.log(data);
+            //   console.log(data);
               $(".city").append(data.current_observation.display_location.full);
               $(".temp").append("Temperature: " + data.current_observation.temperature_string);
               $(".icon").append("<img src='" + data.current_observation.icon_url + "'>");

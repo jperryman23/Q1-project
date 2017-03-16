@@ -1,121 +1,173 @@
 body {
-background-image: url("background-Image.jpg");
-height: 750px;
-background-size: cover;
-/*background-position: right;*/
-background-position-x: 90% ;
-
-background-repeat: no-repeat;
-
+    background-image: url("background-Image.jpg");
+    /*height: 750px;*/
+    height: 100vh;
+    background-size: cover;
+    /*background-position: right;*/
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+    display: flex;
+    /*min-height: 100vh;*/
+    flex-direction: column;
 }
 
-.brand-logo{
+main {
+    flex: 1 0 auto;
+}
+
+.brand-logo {
     margin-left: 25px;
 }
- nav{
-     opacity: .75
-     /*margin-left: 2em;*/
- }
+
+nav {
+    opacity: .30;
+    /*margin-left: 2em;*/
+}
 
 a.topTabs {
     font-weight: bold;
-
 }
- a.topTabs:hover{
-     color: #37c9d7
 
- }
+a.topTabs:hover {
+    color: #37c9d7
+}
 
- .widgets{
-     display:flex;
-     flex-wrap: nowrap;
-     justify-content: space-around;
-     padding: 2em;
-     opacity: .50
- }
+.widgets {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 2em;
+    opacity: .50
+}
 
-  .toDoList{
-      width: 200px;
-      min-width: 100px;
-      height: 400px;
-      min-height: 150px;
-      padding: 0.5em;
-      margin-left: 2em;
-      background-color: black;
-      color: white;
-      /*opacity: .50*/
-
-  }
-
-
- .weather{
-      width: 200px;
-            min-width: 100px;
-      height: 400px;
-       min-height: 150px;
-      padding: 0.5em;
-      margin-left: 2em;
-      background-color: black;
-      color: white;
-      /*opacity: .50;*/
-      margin-right: 2em;
-  }
-
-.noName{
-    width: 400px;
-    min-width: 200px;
+.toDoList {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    min-width: 245px;
     height: 400px;
-    min-height: 200px;
+    min-height: 150px;
+    max-height: 550px;
+    padding: 0.5em;
+    margin-left: 2em;
+    background-color: black;
+    color: white;
+    /*opacity: .75*/
+}
+
+div.list-items {
+    display: flex;
+    padding: 5px;
+    margin-top: 3px;
+    color: white;
+    height: 340px;
+    /*border: solid 1px white;*/
+    /*opacity: .50;*/
+    /*height: 360px;*/
+}
+
+.weather {
+    width: 200px;
+    min-width: 100px;
+    height: 400px;
+    min-height: 150px;
+    max-height: 550px;
     padding: 0.5em;
     margin-left: 2em;
     background-color: black;
     color: white;
     /*opacity: .50;*/
+    margin-right: 2em;
+}
+
+.noName {
+    width: 400px;
+    min-width: 200px;
+    height: 400px;
+    min-height: 200px;
+    max-height: 550px;
+    padding: 0.5em;
+    margin-left: 2em;
+    background-color: black;
+    color: white;
+    /*opacity: .50;*/
+}
+
+.weather header {
+    background-color: rgb(17, 56, 191);
+    text-align: center;
+}
+
+.toDoList header {
+    background-color: rgb(17, 56, 191);
+    text-align: center;
+}
+
+.noName header {
+    background-color: rgb(17, 56, 191);
+    text-align: center;
+}
+
+.ui-icon-resize {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+    border-right: 3px solid #f5f5f5;
+    border-bottom: 3px solid #f5f5f5;
+}
+
+.newTask {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: rgb(17, 56, 191);
+    padding: 2px;
+    border: solid 1px gray;
+    margin-top: 5px;
+
+    color: black;
 
 }
 
- .weather header{
-     background-color: blue;
-     text-align: center;
- }
+.clocks {
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: space-around;
+}
 
- .toDoList header {
-     background-color: blue;
-     text-align: center;
- }
+.footerWrapper {
+    position: fixed;
+    bottom: 3%;
+    left: 15%;
+}
 
- .noName header {
-     background-color: blue;
-     text-align: center;
- }
-
- .ui-icon-resize {
-     position: absolute;
-     height: 10px;
-     width: 10px;
-     bottom: 0;
-     right: 0;
-     cursor: se-resize;
-
-    border-right: 3px solid #f5f5f5;
-    border-bottom: 3px solid #f5f5f5;
- }
-
- div.clocks {
-     display: flex;
-     flex-wrap: nowrap;
-     /*flex-direction: column;*/
-     /*border: 1px solid white;*/
-     justify-content: space-around;
-     margin-top: 15em;
-
-
-
- }
-div.time{
-    background: white;
-    border: 1px solid white;
-    width: 100px;
+div.time {
+    /*background: black;*/
+    color: white;
+    border: 1px solid rgb(184, 210, 247);
+    width: 150px;
     height: 50px;
+    opacity: .75;
+    text-align: center;
+}
 
+.time header {
+    color: white;
+    background: black;
+    opacity: .75
+}
+
+li>label {
+    font-size: 12px !important;
+    color: white;
+    padding-left: 20px;
+}
+
+
+button {
+    color: black;
+    font-weight: bold;
 }

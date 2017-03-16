@@ -16,64 +16,150 @@
 </head>
 
 <body>
+    <main>
 
-    <!-- NAV BAR -->
-    <nav>
-        <div class="nav-wrapper #000000 black">
-            <a href="#!" class="brand-logo">J Home Tab </a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+        <!-- NAV BAR -->
+        <nav>
+            <div class="nav-wrapper #000000 black">
+                <a href="#!" class="brand-logo">J Home Tab </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
 
-                <li><a class="topTabs" href="https://github.com/jperryman23" target="_blank">Github</a></li>
-                <li><a class="topTabs" href="https://learn.galvanize.com/cohorts/117/daily_plans" target="_blank">Learn</a></li>
+                    <li><a class="topTabs" href="https://github.com/jperryman23" target="_blank">Github</a></li>
+                    <li><a class="topTabs" href="https://learn.galvanize.com/cohorts/117/daily_plans" target="_blank">Learn</a></li>
 
-                <li><a class="topTabs" href="http://www.google.com/flights" target="_blank">Google Flights</a></li>
-                <li><a class="topTabs" href="contact.html">#jetsetphoto</a></li>
+                    <li><a class="topTabs" href="http://www.google.com/flights" target="_blank">Google Flights</a></li>
+                    <li><a class="topTabs" href="contact.html">#jetsetphoto</a></li>
 
-            </ul>
+                </ul>
 
-        </div>
-    </nav>
+            </div>
+        </nav>
 
 
-    <div class="widgets">
-        <div class="toDoList resizable">
-            <header>To Do List</header>
-            <div class="ui-icon-resize"></div>
-        </div>
+        <div class="widgets">
+            <div class="toDoList resizable">
 
-        <div class="noName resizable">
-            <div class="test">
-                <header>Untiled Widget Box</header>
+                <header>To Do List</header>
+
+
+                <div class="list-items">
+                    <ul class="ulList">
+                        <li>
+                            <input type="checkbox" class="checkbox"id="test1" />
+                            <label for="test1">Call Aaron</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="test2" />
+                            <label for="test2">Check flights</label>
+                        </li>
+
+                        <li>
+                           <input type="checkbox" id="test3" />
+                           <label for="test3">Q1 Project</label>
+                        </li>
+
+                        <li>
+                           <input type="checkbox" id="test4" />
+                           <label for="test4">Figure out utcOffset</label>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="newTask">
+                    <input type="textbox" class="addTask" id="addTask" value="" placeholder="add new task" size="25px">
+                    <button type="submit" name="submit" class="buttonAdd">Add Task</button>
+                </div>
+
+                <div class="ui-icon-resize"></div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="noName resizable">
+                <div class="test">
+                    <header>Text Box for Notes</header>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="textarea1" class="materialize-textarea">Enter notes here!</textarea>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ui-icon-resize"></div>
+                </div>
+            </div>
+
+            <div class="weather resizable">
+                <header>Current Weather</header>
+                <div class="city"></div>
+                <div class="temp"></div>
+                <div class="icon"></div>
                 <div class="ui-icon-resize"></div>
             </div>
+
+
         </div>
 
-        <div class="weather resizable">
-            <header>Current Weather</header>
-            <div class="city"></div>
-            <div class="temp"></div>
-            <div class="icon"></div>
-            <div class="ui-icon-resize"></div>
+        <div class="footerWrapper">
+            <footer class="clocks">
 
+                <div class="time 1">
+                    <header>Denver</header>
+                </div>
+                <div class="time 2">
+                    <header>New York City</header>
+                </div>
+                <div class="time 3">
+                    <header>Buenos Aires</header>
+                </div>
+                <div class="time 4">
+                    <header>London</header>
+                </div>
+                <div class="time 5">
+                    <header>Brisbane</header>
+                </div>
+                <div class="time 6">
+                    <header>Paris</header>
+                </div>
+
+            </footer>
         </div>
-    </div>
-
-    <div class="clocks">
-      <div class="time"><p>New York City</p></div>
-      <div class="time"><p>Buenos Aires</p></div>
-      <div class="time"><p>London</p></div>
-      <div class="time"><p>Brisbane</p></div>
-    </div>
 
 
-    <script type="text/javascript" src="jquery-3.1.13.js"></script>
-    <script type="text/javascript" src="jquery-ui.js">
-    </script>
+        <!-- <footer class="page-footer">
 
-    <script type="text/javascript" src="newtab.js"></script>
-    <script src="moment.js"></script>
+              <div class="footer-copyright">
+                <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+              </div>
+            </footer> -->
 
+
+        <!-- JAVASCRIPT SCRIPTS -->
+        <script type="text/javascript" src="jquery-3.1.13.js"></script>
+        <script type="text/javascript" src="jquery-ui.js">
+        </script>
+
+        <script type="text/javascript" src="newtab.js"></script>
+        <script src="moment.js"></script>
+        <main>
 </body>
 
 </html>
