@@ -36,16 +36,43 @@ a.topTabs:hover {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    padding: 2em;
-    opacity: .50
+    padding: 1em;
+    margin-top: 20px;
+    opacity: .65
 }
 
+.noNews {
+    width: 410px;
+    min-width: 325px;
+    height: 420px;
+    min-height: 410px;
+    max-height: 550px;
+    padding: 0.5em;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    /*opacity: .50;*/
+}
+
+.notes {
+    width: 220px;
+    min-width: 100px;
+    height: 420px;
+    min-height: 150px;
+    max-height: 550px;
+    padding: 0.5em;
+    margin-left: 2em;
+    background-color: black;
+    color: white;
+    /*opacity: .50;*/
+
+}
 .toDoList {
     display: flex;
     flex-direction: column;
     width: 250px;
     min-width: 245px;
-    height: 400px;
+    height: 420px;
     min-height: 150px;
     max-height: 550px;
     padding: 0.5em;
@@ -60,7 +87,7 @@ div.list-items {
     padding: 5px;
     margin-top: 3px;
     color: white;
-    height: 340px;
+    height: 365px;
     /*border: solid 1px white;*/
     /*opacity: .50;*/
     /*height: 360px;*/
@@ -69,7 +96,7 @@ div.list-items {
 .weather {
     width: 200px;
     min-width: 100px;
-    height: 400px;
+    height: 420px;
     min-height: 150px;
     max-height: 550px;
     padding: 0.5em;
@@ -80,18 +107,12 @@ div.list-items {
     margin-right: 2em;
 }
 
-.noName {
-    width: 400px;
-    min-width: 200px;
-    height: 400px;
-    min-height: 200px;
-    max-height: 550px;
-    padding: 0.5em;
-    margin-left: 2em;
-    background-color: black;
-    color: white;
-    /*opacity: .50;*/
+
+.notes header {
+    background-color: rgb(17, 56, 191);
+    text-align: center;
 }
+
 
 .weather header {
     background-color: rgb(17, 56, 191);
@@ -103,9 +124,10 @@ div.list-items {
     text-align: center;
 }
 
-.noName header {
+.noNews header {
     background-color: rgb(17, 56, 191);
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .ui-icon-resize {
@@ -123,11 +145,12 @@ div.list-items {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    /*position: fixed;
+    bottom: 10px;*/
     background-color: rgb(17, 56, 191);
     padding: 2px;
-    border: solid 1px gray;
+    /*border: solid 1px gray;*/
     margin-top: 5px;
-
     color: black;
 
 }
@@ -141,7 +164,7 @@ div.list-items {
 .footerWrapper {
     position: fixed;
     bottom: 3%;
-    left: 15%;
+    left: 18%;
 }
 
 div.time {
@@ -170,4 +193,32 @@ li>label {
 button {
     color: black;
     font-weight: bold;
+}
+
+.cssStyle {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.ulList {
+    margin-left: 5px;
+}
+
+.row.stories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: solid 1px gray;
+    margin: 5px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.weather-today {
+    margin-top: 8px;
+}
+p.weekday {
+    text-align: center;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
 }
