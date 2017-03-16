@@ -1,5 +1,4 @@
-
-    var isClicked = false;
+var isClicked = false;
 
 
 $(document).ready(function() {
@@ -20,8 +19,13 @@ $(document).ready(function() {
         // console.log(time1);
         $(".time").append(time1._d)
 
-        $("#test1").click(function(){
-            $("label").toggleClass("cssStyle"); })
+        $("#ulList").on('click', 'input', function(){
+
+            var checkValue = $(this).attr('id');
+            console.log(checkValue)
+            $("label[for=" + checkValue + "]").toggleClass("cssStyle");
+            // $('label').toggleClass("cssStyle");
+        })
 
         // var time2 = moment().utcOffset('dddd MMMM Do YYYY HH MM SS-5');
         // console.log(time2._d);
