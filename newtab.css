@@ -77,8 +77,10 @@ div.news{
     background-color: black;
     color: white;
     /*opacity: .50;*/
-
 }
+
+
+
 .toDoList {
     display: flex;
     flex-direction: column;
