@@ -39,8 +39,11 @@ $(document).ready(function() {
         // $('label').toggleClass("cssStyle");
     })
 
+
+
 });
 
+// var myNotes = localStorage.setItem('text', $("#textarea1").val())
 
 
 $(".buttonAdd").on('click', function() {
@@ -54,14 +57,13 @@ $(".buttonAdd").on('click', function() {
 
 
 
-$("body").mousemove(function(event) {
-    // console.log(event);
+$("body").mousemove(function(event) { // console.log(event);
     if (!isClicked) {
         var mouseX = event.clientX
         // console.log(mouseX);
         var windowWidth = $(window).width()
         var percent = (mouseX / windowWidth) * 100
-        // console.log(percent);
+        //  console.log(percent);
 
         $("body").css("background-position", percent + '%')
     }
@@ -82,6 +84,8 @@ $("body").mouseup(function() {
 // $("label").mouseover(function(){
 //     $("label").css("border", "dotted .5px gray")
 // })
+
+
 
 
 $.ajax({
@@ -137,27 +141,35 @@ $.ajax({
     },
     success: function(data) {
         //   console.log(data.articles["0"]);
+        //    console.log(data.articles["2"]);
+
 
         $(".newsImage").append(
-            "<img src='" + data.articles["0"].urlToImage + "' height='75px' width='75px'>")
-        //  $(".col.s9.test").append(data.articles["0"].title),
-        $(".newDesc").append(data.articles["0"].description)
+            "<img src='" + "http:" + data.articles["0"].urlToImage + "' height='60px' width='60px'>")
 
+        // $(".newTitle").append(data.articles["0"].title)
+
+        $(".newDesc").append(data.articles["0"].description + "<a href='" + data.articles["0"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage2").append(
-            "<img src='" + data.articles["1"].urlToImage + "' height='75px' width='75px'>")
-        //  $(".col.s9.test").append(data.articles["0"].title),
-        $(".newDesc2").append(data.articles["1"].description)
+            "<img src='" + "http:" + data.articles["1"].urlToImage + "' height='60px' width='60px'>")
+
+        $(".newDesc2").append(data.articles["1"].title + "<a href='" + data.articles["1"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage3").append(
-            "<img src='" + data.articles["2"].urlToImage + "' height='75px' width='75px'>")
-        //  $(".col.s9.test").append(data.articles["0"].title),
-        $(".newDesc3").append(data.articles["2"].description)
+            "<img src='" + "http:" + data.articles["2"].urlToImage + "' height='60px' width='60px'>")
+
+        $(".newDesc3").append(data.articles["2"].title + "<a href='" + data.articles["2"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage4").append(
-            "<img src='" + data.articles["3"].urlToImage + "' height='75px' width='75px'>")
-        //  $(".col.s9.test").append(data.articles["0"].title),
-        $(".newDesc4").append(data.articles["3"].description)
+            "<img src='" + "http:" + data.articles["3"].urlToImage + "' height='60px' width='60px'>")
+
+        $(".newDesc4").append(data.articles["3"].title + "<a href='" + data.articles["3"].url + "'>" + " read more >> " + "</a>")
+
+        $(".newsImage5").append(
+            "<img src='" + "http:" + data.articles["4"].urlToImage + "' height='60px' width='60px'>")
+
+        $(".newDesc5").append(data.articles["4"].title + "<a href='" + data.articles["4"].url + "'>" + " read more >> " + "</a>")
 
     }
 })
@@ -188,7 +200,7 @@ function loopSlow() {
     makeCall(weatherObjects[weatherObjectsIndex]);
     weatherObjectsIndex = weatherObjectsIndex + 1
     if (weatherObjectsIndex < 6) {
-        setTimeout(loopSlow, 1200)
+        setTimeout(loopSlow, 1500)
     }
 };
 loopSlow();
