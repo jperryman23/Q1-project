@@ -34,6 +34,11 @@ a.topTabs:hover {
     color: #37c9d7
 }
 
+a.topTabs.changeBackground {
+        margin-top: 5px;
+        /*margin-left: 10px;*/
+}
+
 label:hover{
     border: dotted .5px gray;
 }
@@ -92,13 +97,18 @@ div.news{
     /*opacity: .50;*/
 }
 
-#textarea1 {
+textarea {
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     overflow-y: auto;
-    /* padding: .8rem 0 1.6rem 0; */
+    padding: .8rem 1.6rem 0;
     resize: vertical;
     min-height: 3rem;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    height: 390px;
+    width: 185px;
 
 }
 
@@ -106,8 +116,7 @@ div.news{
 .input-field label {
     color: #9e9e9e;
     position: static;
-    bottom: .10rem;
-    left: 0;
+    bottom: .10rem; left: 0;
     font-size: 1rem;
     transition: .2s ease-out;
     position: sticky;
@@ -132,7 +141,7 @@ div.news{
 div.list-items {
     display: flex;
     padding: 5px;
-    margin-top: 3px;
+    margin-top: -30px;
     color: white;
     height: 365px;
     /*border: solid 1px white;*/

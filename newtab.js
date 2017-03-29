@@ -34,16 +34,26 @@ $(document).ready(function() {
 
     $("#ulList").on('click', 'input', function() {
         var checkValue = $(this).attr('id');
-        // console.log(checkValue)
+        console.log(checkValue)
         $("label[for=" + checkValue + "]").toggleClass("cssStyle");
-        // $('label').toggleClass("cssStyle");
     })
 
-
+    $('.changeBackground').click(function() {
+      getImage();
+    })
 
 });
 
 // var myNotes = localStorage.setItem('text', $("#textarea1").val())
+
+function getImage(){
+  var options = ['images/background-image.jpg', 'images/flamenco-beach.jpeg', 'images/south-africa.jpg', 'images/costa-rica.jpg'];
+  var random = Math.floor(Math.random() * options.length)
+  var newBackground = options[random]
+  $('body').css({'background-image': 'url(' + newBackground + ')'})
+  };
+
+
 
 
 $(".buttonAdd").on('click', function() {
@@ -81,9 +91,7 @@ $("body").mouseup(function() {
     // console.log("is off");
 });
 
-// $("label").mouseover(function(){
-//     $("label").css("border", "dotted .5px gray")
-// })
+
 
 
 
