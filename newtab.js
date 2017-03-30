@@ -44,7 +44,18 @@ $(document).ready(function() {
 
 });
 
+// ------------- LOCAL STORAGE ------------
 // var myNotes = localStorage.setItem('text', $("#textarea1").val())
+// var storage = function() {
+//     return {
+//         'create': function(key, value) {
+//             localStorage.setItem(key, JSON.stringify(value))
+//         },
+//         'read': function(key) {
+//             return localStorage.getItem(key)
+//         }
+//     }
+// }
 
 function getImage(){
   var options = ['images/background-image.jpg', 'images/flamenco-beach.jpeg', 'images/south-africa.jpg', 'images/costa-rica.jpg'];
