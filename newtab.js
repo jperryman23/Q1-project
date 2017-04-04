@@ -3,6 +3,10 @@ var isClicked = false;
 
 $(document).ready(function() {
 
+
+    $("#textarea").val(localStorage.getItem('text'));
+
+
     $(".toDoList").draggable();
     $(".weather").draggable();
     $(".noNews").draggable();
@@ -34,7 +38,7 @@ $(document).ready(function() {
 
     $("#ulList").on('click', 'input', function() {
         var checkValue = $(this).attr('id');
-        console.log(checkValue)
+        // console.log(checkValue)
         $("label[for=" + checkValue + "]").toggleClass("cssStyle");
     })
 
@@ -44,18 +48,31 @@ $(document).ready(function() {
 
 });
 
-// ------------- LOCAL STORAGE ------------
-// var myNotes = localStorage.setItem('text', $("#textarea1").val())
-// var storage = function() {
-//     return {
-//         'create': function(key, value) {
-//             localStorage.setItem(key, JSON.stringify(value))
-//         },
-//         'read': function(key) {
-//             return localStorage.getItem(key)
-//         }
-//     }
+$("#textarea").on('keyup', function(event){
+    localStorage.setItem('text', $("#textarea").val())
+    // console.log($("#textarea").val());
+})
+
+// --------- LOCAL STORAGE ON CHECKBOXES --------------
+// var taskItems = document.getElementsByClassName("taskItems");
+// console.log(taskItems[1]);
+//
+// console.log(taskItems[0].visible = 'hidden');
+//
+// //TODO: each element in the array IS an element in the html.
+// //they are not strings they are html elements.
+// taskItems[0].style.visibility = 'hidden';
+
+// var checks = "[";
+// for (var i = 0; i < ulList.length; i++) {
+//
 // }
+//               {"id:" + addTask +,"val" }
+//               {"label:" + id +,"val" }
+//               {"checkValue:" + id +,"val" }
+//              ];
+
+
 
 function getImage(){
   var options = ['images/background-image.jpg', 'images/flamenco-beach.jpeg', 'images/south-africa.jpg', 'images/costa-rica.jpg'];
@@ -71,7 +88,7 @@ $(".buttonAdd").on('click', function() {
     var task = $(".addTask").val();
     var newInput = $("#addTask").val().replace(/\s/g, "");
 
-    $(".ulList").append("<li> <input type='checkbox' id='" + newInput + "'><label for='" + newInput + "'>" + task + "</label></li>")
+    $(".ulList").append("<li class='taskItem'> <input type='checkbox' id='" + newInput + "'><label for='" + newInput + "'>" + task + "</label></li>")
 
     $("#addTask").val("")
 });
@@ -162,31 +179,31 @@ $.ajax({
         //   console.log(data.articles["0"]);
         //    console.log(data.articles["2"]);
 
-
+// "<img src='" + "http:" + data.articles["0"].urlToImage + "' height='60px' width='60px'>")
         $(".newsImage").append(
-            "<img src='" + "http:" + data.articles["0"].urlToImage + "' height='60px' width='60px'>")
+            "<img src='" + data.articles["0"].urlToImage + "' height='60px' width='60px'>")
 
         // $(".newTitle").append(data.articles["0"].title)
 
         $(".newDesc").append(data.articles["0"].description + "<a href='" + data.articles["0"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage2").append(
-            "<img src='" + "http:" + data.articles["1"].urlToImage + "' height='60px' width='60px'>")
+            "<img src='"  + data.articles["1"].urlToImage + "' height='60px' width='60px'>")
 
         $(".newDesc2").append(data.articles["1"].title + "<a href='" + data.articles["1"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage3").append(
-            "<img src='" + "http:" + data.articles["2"].urlToImage + "' height='60px' width='60px'>")
+            "<img src='"  + data.articles["2"].urlToImage + "' height='60px' width='60px'>")
 
         $(".newDesc3").append(data.articles["2"].title + "<a href='" + data.articles["2"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage4").append(
-            "<img src='" + "http:" + data.articles["3"].urlToImage + "' height='60px' width='60px'>")
+            "<img src='" + data.articles["3"].urlToImage + "' height='60px' width='60px'>")
 
         $(".newDesc4").append(data.articles["3"].title + "<a href='" + data.articles["3"].url + "'>" + " read more >> " + "</a>")
 
         $(".newsImage5").append(
-            "<img src='" + "http:" + data.articles["4"].urlToImage + "' height='60px' width='60px'>")
+            "<img src='" + data.articles["4"].urlToImage + "' height='60px' width='60px'>")
 
         $(".newDesc5").append(data.articles["4"].title + "<a href='" + data.articles["4"].url + "'>" + " read more >> " + "</a>")
 
