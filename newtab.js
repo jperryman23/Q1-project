@@ -2,18 +2,13 @@ var isClicked = false;
 
 
 $(document).ready(function() {
-
-
     $("#textarea").val(localStorage.getItem('text'));
-
 
     $(".toDoList").draggable();
     $(".weather").draggable();
     $(".noNews").draggable();
     $(".notes").draggable();
-
     $(".resizable").resizable();
-
     $("ul").sortable();
 
     $('#textarea1').val('New Text');
@@ -34,12 +29,13 @@ $(document).ready(function() {
     // var mytime = moment().tz("America/Los_Angeles").format();
     // console.log(mytime);
 
-
-
     $("#ulList").on('click', 'input', function() {
         var checkValue = $(this).attr('id');
         // console.log(checkValue)
         $("label[for=" + checkValue + "]").toggleClass("cssStyle");
+
+        checkList[checkValue]["status"] = $(this)[0].checked;
+        checkListSave()
     })
 
     $('.changeBackground').click(function() {
@@ -54,6 +50,8 @@ $("#textarea").on('keyup', function(event){
 })
 
 // --------- LOCAL STORAGE ON CHECKBOXES --------------
+
+
 // var taskItems = document.getElementsByClassName("taskItems");
 // console.log(taskItems[1]);
 //
@@ -72,6 +70,13 @@ $("#textarea").on('keyup', function(event){
 //               {"checkValue:" + id +,"val" }
 //              ];
 
+var checkList = {
+}
+console.log(checkList);
+
+function checkListSave(){
+    localStorage.setItem('checklist', JSON.stringify(checkList))
+}
 
 
 function getImage(){
@@ -84,6 +89,7 @@ function getImage(){
 
 
 
+
 $(".buttonAdd").on('click', function() {
     var task = $(".addTask").val();
     var newInput = $("#addTask").val().replace(/\s/g, "");
@@ -91,7 +97,16 @@ $(".buttonAdd").on('click', function() {
     $(".ulList").append("<li class='taskItem'> <input type='checkbox' id='" + newInput + "'><label for='" + newInput + "'>" + task + "</label></li>")
 
     $("#addTask").val("")
+
+    checkList[newInput] = {
+        label: newInput,
+        status: false
+
+    }
+
+    checkListSave()
 });
+
 
 
 
@@ -236,7 +251,7 @@ function loopSlow() {
     makeCall(weatherObjects[weatherObjectsIndex]);
     weatherObjectsIndex = weatherObjectsIndex + 1
     if (weatherObjectsIndex < 6) {
-        setTimeout(loopSlow, 1500)
+        setTimeout(loopSlow, 2000)
     }
 };
 loopSlow();

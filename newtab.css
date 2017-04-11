@@ -1,11 +1,9 @@
 body {
-    background-image: url("images/background-Image.jpg");
-    /*background-image: url("images/flamenco-beach.jpeg");*/
-    /*height: 750px;*/
+    background-image: url("images/flamenco-beach.jpeg");
     height: 100vh;
     background-size: cover;
     /*background-position: right;*/
-    background-position-x: 90%;
+    background-position-x: 25%;
     background-repeat: no-repeat;
     display: flex;
     /*min-height: 75vw:*/
@@ -71,7 +69,7 @@ label:hover{
 div.news{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .row .col.s9 {
@@ -82,14 +80,14 @@ div.news{
 
 .notes {
     display: flex;
-    flex-wrap: nowrap;
+    /*flex-wrap: nowrap;*/
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     width: 220px;
-    min-width: 100px;
+    min-width: 200px;
     height: 450px;
-    min-height: 150px;
-    max-height: 550px;
+    min-height: 450px;
+    max-height: 450px;
     padding: 0.5em;
     margin-left: 2em;
     background-color: black;
@@ -107,7 +105,7 @@ textarea {
     min-height: 3rem;
     margin-bottom: 5px;
     margin-top: 15px;
-    height: 390px;
+    height: 395px;
     width: 185px;
 
 }
@@ -150,13 +148,13 @@ div.list-items {
 }
 
 .weather {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: space-between;
     width: 270px;
-    min-width: 100px;
+    min-width: 200px;
     height: 450px;
-    min-height: 150px;
+    min-height: 450px;
     max-height: 550px;
     padding: 0.5em;
     margin-left: 2em;
@@ -178,17 +176,20 @@ div.weatherFlex{
 .notes header {
     background-color: rgb(17, 56, 191);
     text-align: center;
+    font-weight: bold;
 }
 
 
 .weather header {
     background-color: rgb(17, 56, 191);
     text-align: center;
+    font-weight: bold;
 }
 
 .toDoList header {
     background-color: rgb(17, 56, 191);
     text-align: center;
+    font-weight: bold;
 }
 
 .noNews header {
@@ -244,13 +245,18 @@ div.time {
     height: 50px;
     opacity: .75;
     text-align: center;
-    align-content: center;
+    /*align-content: center;*/
+    background-color: black;
+    opacity: .60;
+
+
 }
 
 .time header {
     color: black;
-    background: rgb(231, 231, 231);
-    opacity: .75;
+    font-weight: bold;
+    background-color: rgb(231, 231, 231);
+    /*opacity: .75;*/
 
 }
 
