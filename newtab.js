@@ -1,8 +1,12 @@
 var isClicked = false;
+// var elem = document.querySelector('.dropdown-trigger');
+// var instance = M.Dropdown.getInstance(elem);
 
 
 $(document).ready(function() {
     $("#textarea").val(localStorage.getItem('text'));
+
+    // $('.dropdown-trigger').dropdown();
 
     $(".toDoList").draggable();
     $(".weather").draggable();
@@ -13,6 +17,7 @@ $(document).ready(function() {
 
     $('#textarea1').val('New Text');
     $('#textarea1').trigger('autoresize');
+
 
 
     var myTime = moment().format('LLLL'); // dddd MMMM do, YYYY h:mm:ss a
